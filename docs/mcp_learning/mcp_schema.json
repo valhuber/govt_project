@@ -1,0 +1,284 @@
+{
+    "tool_type": "json-api",
+    "schema_version": "1.0",
+    "base_url": "http://localhost:5656/api",
+    "description": "API Logic Project: govt_project",
+    "resources": [
+        {
+            "name": "Charge",
+            "path": "/Charge",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "project_id",
+                "description",
+                "amount",
+                "total_distributed_amount",
+                "charge_date",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "project_id",
+                "description",
+                "amount",
+                "total_distributed_amount",
+                "charge_date",
+                "notes"
+            ]
+        },
+        {
+            "name": "Project",
+            "path": "/Project",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "name",
+                "project_funding_definition_id",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "name",
+                "project_funding_definition_id",
+                "notes"
+            ]
+        },
+        {
+            "name": "ChargeDeptAllocation",
+            "path": "/ChargeDeptAllocation",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "charge_id",
+                "project_funding_line_id",
+                "department_id",
+                "dept_charge_definition_id",
+                "percent",
+                "amount",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "charge_id",
+                "project_funding_line_id",
+                "department_id",
+                "dept_charge_definition_id",
+                "percent",
+                "amount",
+                "notes"
+            ]
+        },
+        {
+            "name": "Department",
+            "path": "/Department",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "name",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "name",
+                "notes"
+            ]
+        },
+        {
+            "name": "DeptChargeDefinition",
+            "path": "/DeptChargeDefinition",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "department_id",
+                "name",
+                "total_percent",
+                "is_active",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "department_id",
+                "name",
+                "total_percent",
+                "is_active",
+                "notes"
+            ]
+        },
+        {
+            "name": "ProjectFundingLine",
+            "path": "/ProjectFundingLine",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "project_funding_definition_id",
+                "department_id",
+                "dept_charge_definition_id",
+                "percent",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "project_funding_definition_id",
+                "department_id",
+                "dept_charge_definition_id",
+                "percent",
+                "notes"
+            ]
+        },
+        {
+            "name": "ChargeGlAllocation",
+            "path": "/ChargeGlAllocation",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "charge_dept_allocation_id",
+                "dept_charge_definition_line_id",
+                "gl_account_id",
+                "percent",
+                "amount",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "charge_dept_allocation_id",
+                "dept_charge_definition_line_id",
+                "gl_account_id",
+                "percent",
+                "amount",
+                "notes"
+            ]
+        },
+        {
+            "name": "DeptChargeDefinitionLine",
+            "path": "/DeptChargeDefinitionLine",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "dept_charge_definition_id",
+                "gl_account_id",
+                "percent",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "dept_charge_definition_id",
+                "gl_account_id",
+                "percent",
+                "notes"
+            ]
+        },
+        {
+            "name": "GlAccount",
+            "path": "/GlAccount",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "department_id",
+                "account_number",
+                "name",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "department_id",
+                "account_number",
+                "name",
+                "notes"
+            ]
+        },
+        {
+            "name": "ProjectFundingDefinition",
+            "path": "/ProjectFundingDefinition",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "name",
+                "total_percent",
+                "is_active",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "name",
+                "total_percent",
+                "is_active",
+                "notes"
+            ]
+        },
+        {
+            "name": "SysConfig",
+            "path": "/SysConfig",
+            "methods": [
+                "GET",
+                "PATCH",
+                "POST",
+                "DELETE"
+            ],
+            "fields": [
+                "id",
+                "name",
+                "discount_rate",
+                "tax_rate",
+                "notes"
+            ],
+            "filterable": [
+                "id",
+                "name",
+                "discount_rate",
+                "tax_rate",
+                "notes"
+            ]
+        }
+    ]
+}
